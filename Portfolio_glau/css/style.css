@@ -54,7 +54,7 @@ body {
 .social-sidebar {
     position: fixed;
 
-    left: 25px;
+    right: 5px;
     top: 50%;
 
     transform: translateY(-50%);
@@ -666,9 +666,13 @@ button:focus-visible {
 }
 
 .coffee-icon {
-    color: var(--text-primary);
+    color: var(--primary);
 
     margin-inline: var(--space-3);
+}
+
+.coffee-icon:hover {
+    color: var(--secondary);
 }
 
 @keyframes heartBeat {
@@ -692,10 +696,11 @@ button:focus-visible {
 
 .socials a i {
     font-size: 1.5rem;
+    color: var(--primary);
 }
 
 .socials a:hover i {
-    color: var(--highlight);
+    color: var(--secondary);
     transform: translateY(-3px);
 }
 
