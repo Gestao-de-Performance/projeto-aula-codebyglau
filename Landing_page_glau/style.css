@@ -768,3 +768,239 @@ h2 {
     color: #ffc107;
     margin-bottom: 10px;
 }
+
+
+/* =========================================================
+   CONTATO
+========================================================= */
+
+/* Fundo da seção */
+.contato {
+    background:
+        linear-gradient(135deg,
+            var(--accent),
+            var(--secondary));
+
+    color: var(--text);
+}
+
+/* Grid responsivo */
+.contato-grid {
+    display: grid;
+
+    gap: 40px;
+
+    align-items: center;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* Título */
+.contato-texto h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Texto */
+.contato-texto p {
+    margin-bottom: 25px;
+    max-width: 500px;
+}
+
+/* Caixa de informações */
+.contato-info {
+    background: rgba(255, 255, 255, 0.08);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    /* Efeito vidro */
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Espaçamento dos itens */
+.info-item {
+    margin-bottom: 25px;
+}
+
+/* Título dos itens */
+.info-item strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+/* Botão principal */
+.btn {
+    display: inline-block;
+
+    background: var(--primary);
+
+    color: #fff;
+
+    padding: 14px 35px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease,
+        color .3s ease;
+
+    position: relative;
+
+    overflow: hidden;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 20px rgba(233, 30, 99, 0.2);
+}
+
+/* Hover do botão */
+.btn:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 10px 25px rgba(233, 30, 99, 0.3);
+    color: var(--primary);
+    background: var(--bg-soft);
+    border: 1px solid var(--primary);
+}
+
+/* Botão dentro da seção contato */
+.contato .btn {
+    background: var(--primary);
+    color: var(--bg-soft);
+}
+
+/* Hover específico */
+.contato .btn:hover {
+    background: var(--bg-soft);
+    color: var(--primary);
+
+    border: 1px solid #e91e63;
+}
+
+/* =========================================================
+   FOOTER / RODAPÉ
+========================================================= */
+
+/* Fundo do footer */
+.footer {
+    background: var(--footer);
+
+    color: #fff;
+
+    padding: 60px 0 20px;
+}
+
+/* Grid do footer */
+.footer-grid {
+    display: grid;
+    align-items: start;
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 40px;
+}
+
+/* Títulos do footer */
+.footer h4 {
+    margin-bottom: 15px;
+}
+
+/* Texto do footer */
+.footer p {
+    color: var(--footer-text);
+    font-size: 0.9rem;
+}
+
+/* Remove bullets */
+.footer-links ul {
+    list-style: none;
+}
+
+/* Links do footer */
+.footer-links a {
+    color: var(--footer-text);
+
+    text-decoration: none;
+
+    display: block;
+
+    margin-bottom: 8px;
+}
+
+/* Hover dos links */
+.footer-links a:hover {
+    color: #fff;
+}
+
+/* Ícones de contato */
+.footer-contato i {
+    color: var(--bg-soft);
+    margin-right: 8px;
+}
+
+/* Área dos ícones sociais */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Botões sociais */
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    color: #fff;
+
+    font-size: 18px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease;
+}
+
+/* Hover dos ícones */
+.social-icons a:hover {
+    background: var(--primary);
+
+    transform: translateY(-4px);
+}
+
+/* Parte inferior do footer */
+.footer-bottom {
+    border-top: 1px solid var(--footer-bottom);
+
+    margin-top: 40px;
+
+    padding-top: 20px;
+
+    text-align: center;
+
+    color: #aaa;
+
+    font-size: 0.8rem;
+}
