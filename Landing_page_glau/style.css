@@ -21,14 +21,6 @@ img {
     height: auto;
 }
 
-p,
-h1,
-h2,
-h3,
-h4 {
-    overflow-wrap: break-word;
-}
-
 a,
 button {
     -webkit-tap-highlight-color: transparent;
