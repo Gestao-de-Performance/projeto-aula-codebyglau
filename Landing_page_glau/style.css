@@ -687,3 +687,84 @@ h2 {
     margin-bottom: 25px;
     font-size: 1.5rem;
 }
+
+/* =========================================================
+   DEPOIMENTOS
+========================================================= */
+
+/* Fundo branco */
+.depoimentos {
+    background: var(--bg-soft);
+}
+
+/* Grid responsivo */
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Card de depoimento */
+.depoimento {
+    background: var(--secondary);
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    border: none;
+
+    font-style: italic;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+/* Hover do depoimento */
+.depoimento:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Área do cliente */
+.cliente {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 10px;
+}
+
+/* Foto do cliente */
+.cliente img {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+/* Nome do cliente */
+.cliente strong {
+    display: block;
+    font-size: 0.95rem;
+}
+
+/* Cargo/descrição */
+.cliente span {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* Estrelas de avaliação */
+.estrelas {
+    color: #ffc107;
+    margin-bottom: 10px;
+}
