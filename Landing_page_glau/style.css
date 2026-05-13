@@ -546,3 +546,144 @@ h2 {
     box-shadow:
         0 20px 40px rgba(0, 0, 0, 0.08);
 }
+
+/* =========================================================
+   SERVIÇOS
+========================================================= */
+
+/* Fundo da seção */
+.servicos {
+    background: var(--accent);
+}
+
+/* Grid responsivo */
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 20px;
+}
+
+/* Card individual */
+.card {
+    background: var(--bg-soft);
+
+    border-radius: 15px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+/* Camada colorida do hover */
+.card::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background: var(--primary);
+
+    opacity: 0;
+
+    transition: opacity .4s ease;
+
+    z-index: 0;
+}
+
+/* Movimento do card */
+.card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 40px rgba(233, 30, 99, 0.18);
+}
+
+/* Mantém conteúdo acima do overlay */
+.card>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* Mostra overlay rosa */
+.card:hover::after {
+    opacity: 1;
+}
+
+/* Texto branco no hover */
+.card:hover h4,
+.card:hover p {
+    color: white;
+}
+
+/* Transição de cor */
+.card h4,
+.card p {
+    transition: color .4s ease;
+    padding-inline: 25px;
+}
+
+/* Título do card */
+.card h4 {
+    padding-top: 20px;
+    margin-bottom: 10px;
+
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    text-align: center;
+
+    line-height: 1.7rem;
+}
+
+/* Texto do card */
+.card p {
+    padding-bottom: 25px;
+
+    text-align: center;
+
+    margin-top: auto;
+
+    font-size: 0.9rem;
+}
+
+/* Imagem do card */
+.card img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    transition:
+        transform .4s ease,
+        filter .4s ease;
+}
+
+/* Zoom da imagem */
+.card:hover img {
+    transform: scale(1.08);
+
+    filter: brightness(0.85);
+}
+
+/* Espaçamento entre categorias */
+.categoria {
+    margin-bottom: 60px;
+}
+
+/* Título da categoria */
+.categoria h3 {
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
