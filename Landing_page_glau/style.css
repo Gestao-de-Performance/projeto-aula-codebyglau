@@ -8,3 +8,541 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+/* Rolagem suave ao clicar em links internos */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Configurações globais do corpo da página */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    background: var(--secondary);
+    line-height: 1.6;
+
+    text-rendering: optimizeLegibility;
+}
+
+/* Faz imagens nunca ultrapassarem o container */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+    overflow-wrap: break-word;
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================================
+   VARIÁVEIS GLOBAIS
+   Centraliza todas as cores do projeto em um único lugar
+========================================================= */
+:root {
+
+    /* =====================
+       CORES PRINCIPAIS
+    ===================== */
+
+    /* Rosa principal utilizado em botões,
+       destaques e efeitos */
+    --primary: #e91e63;
+
+    /* Rosa mais suave para detalhes visuais */
+    --primary-soft: #ff85a1;
+
+
+    /* =====================
+       CORES DE FUNDO
+    ===================== */
+
+    /* Fundo principal do site */
+    --secondary: #fdfaf9;
+
+    /* Branco utilizado em cards e blocos */
+    --bg-soft: #ffffff;
+
+    /* Fundo rosado suave usado em seções */
+    --accent: #f8ecee;
+
+
+    /* =====================
+       TEXTOS
+    ===================== */
+
+    /* Cor principal dos textos */
+    --text: #332d2d;
+
+
+    /* =====================
+       FOOTER
+    ===================== */
+
+    /* Fundo principal do rodapé */
+    --footer: #2b2627;
+
+    /* Cor dos textos do rodapé */
+    --footer-text: #d1c7c8;
+
+    /* Linha divisória inferior do footer */
+    --footer-bottom: #413a3b;
+}
+
+/* =========================================================
+   ESTILOS BASE
+========================================================= */
+
+
+/* SIDEBAR SOCIAL */
+
+.social-sidebar {
+    position: fixed;
+
+    right: 10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    z-index: 999;
+}
+
+.social-sidebar a {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    border: 1px solid var(--primary);
+
+    text-decoration: none;
+
+    color: var(--bg-soft);
+
+    font-size: 1.2rem;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease;
+}
+
+.social-sidebar a:hover {
+    transform: translateY(-5px);
+
+    background: var(--primary);
+
+    color: var(--bg-soft);
+}
+
+/* =========================================
+   SCROLLBAR PERSONALIZADA
+========================================= */
+
+/* largura */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* fundo da barra */
+::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+
+/* parte que desliza */
+::-webkit-scrollbar-thumb {
+    background: var(--bg-soft);
+    border-radius: 20px;
+
+    border: 1px solid var(--primary);
+}
+
+/* hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-soft);
+}
+
+/* Espaçamento padrão entre seções */
+section {
+    padding: clamp(50px, 8vw, 100px) 0;
+}
+
+/* Container centralizador do conteúdo */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* =========================================================
+   HEADER / TOPO
+========================================================= */
+
+/* Cabeçalho fixo no topo da página */
+.header {
+    background: var(--bg-soft);
+    border-bottom: 1px solid var(--accent);
+
+    /* Mantém o menu visível durante o scroll */
+    position: sticky;
+    top: 0;
+
+    /* Mantém acima dos outros elementos */
+    z-index: 1000;
+}
+
+/* Organização interna do header */
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Área da logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo da imagem da logo */
+.logo img {
+    height: 60px;
+    width: auto;
+
+    /* Mantém proporção da imagem */
+    object-fit: contain;
+
+    /* Suaviza animações */
+    transition: 0.3s ease;
+
+    /* Pequena sombra para profundidade */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+}
+
+/* Efeito ao passar o mouse */
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* NAV BAR */
+.nav {
+    list-style: none;
+
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+/* Links do menu */
+.nav a {
+    display: inline-block;
+    white-space: nowrap;
+
+    text-decoration: none;
+
+    background: var(--primary);
+
+    color: var(--bg-soft);
+
+    border: 1px solid var(--primary);
+
+    text-transform: uppercase;
+
+    font-size: 0.8rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+/* Hover */
+.nav a:hover {
+    background: var(--bg-soft);
+
+    color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+/* Focus acessibilidade */
+.nav a:focus,
+.btn:focus {
+    outline: 2px solid var(--primary);
+
+    outline-offset: 4px;
+}
+
+/* BOTÃO MENU MOBILE */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--primary);
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   HERO SECTION
+   Primeira seção de destaque do site
+========================================================= */
+
+.hero {
+
+    /* Fundo composto por imagem + camada escura */
+    background:
+        linear-gradient(rgba(20, 10, 15, 0.65),
+            rgba(20, 10, 15, 0.45)),
+        url('img/hero-estetica.webp') top/cover no-repeat;
+    background-position: center;
+    /* Efeito parallax no desktop */
+    background-attachment: fixed;
+
+    text-align: center;
+    color: white;
+
+    position: relative;
+
+    /* Centralização do conteúdo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Espaçamento responsivo */
+    padding-block: clamp(100px, 15vw, 200px);
+}
+
+/* Título principal */
+.hero h1 {
+    font-size: clamp(1.8rem, 6vw, 4rem);
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.1;
+
+    /* Melhora leitura sobre a imagem */
+    text-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.45);
+    /* Animação do título */
+    animation: heroTitle 1.2s ease forwards;
+}
+
+/* Animação do texto */
+.hero p {
+    animation: heroText 1.5s ease forwards;
+    /* Texto complementar */
+    max-width: 650px;
+    margin: 0 auto 30px;
+
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.92);
+
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+p {
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    line-height: 1.6;
+}
+
+h2 {
+    font-size: clamp(1.4rem, 4vw, 3rem);
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+    color: var(--text);
+
+    line-height: 1.2;
+}
+
+/* =========================================================
+   ANIMAÇÕES DO HERO
+========================================================= */
+
+/* Título sobe aparecendo */
+@keyframes heroTitle {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Texto sobe suavemente */
+@keyframes heroText {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botão sobe suavemente */
+@keyframes heroBtn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
+   SEÇÃO SOBRE
+========================================================= */
+
+/* Fundo branco da seção */
+.sobre {
+    background: var(--bg-soft);
+}
+
+/* Grid principal */
+.sobre-bloco {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+/* Inverte ordem no desktop */
+.sobre-bloco.invertido .sobre-texto {
+    order: 2;
+}
+
+.sobre-bloco.invertido .sobre-img {
+    order: 1;
+}
+
+/* Título */
+.sobre-texto h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* Parágrafos */
+.sobre-texto p {
+    margin-bottom: 15px;
+}
+
+/* =========================================================
+   ANIMAÇÕES AO ROLAR A PÁGINA
+========================================================= */
+
+/* Texto vindo da esquerda */
+.sobre-texto {
+    animation: textoReveal 1s linear forwards;
+}
+
+/* Imagem vindo da direita */
+.sobre-img {
+    animation: imagemReveal 1s linear forwards;
+
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+/* Animação do texto */
+@keyframes textoReveal {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateX(-120px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+}
+
+/* Animação da imagem */
+@keyframes imagemReveal {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateX(120px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+}
+
+/* Imagem da seção sobre */
+.sobre-img img {
+    width: 100%;
+
+    /* Mantém proporção elegante */
+    aspect-ratio: 4 / 3;
+
+    border-radius: 20px;
+
+    object-fit: cover;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.08);
+}
