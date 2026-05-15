@@ -1,18 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 /* =========================================
    ROOT
 ========================================= */
 
 :root {
-    --bg: #faf6ef;
+    --bg: #170911;
     --card: #fafafa;
     --border: rgba(255, 255, 255, 0.08);
-    --text-primary: #2a2302d9;
-    --text-secondary: #fff;
-    --secondary: #0481b9;
-    --primary: #b85c38;
-    --highlight: #e9b211;
+    --text-primary: #cbced6;
+    --text-secondary: #fafafa;
+    --secondary: #ab1163;
+    --primary: #f60c89;
+    --highlight: #30042d;
 
     --space-0: 0rem;
     --space-1: 0.125rem;
@@ -41,12 +40,32 @@ html {
 }
 
 body {
-    font-family: "Inter", sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    font-family: "Anonymous Pro", monospace;
+    color: var(--text-primary);
+    background-color: #170911;
+    font-weight: 400;
+    font-style: normal;
     line-height: 1.6;
     overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.page-bg {
+    min-height: 100vh;
+
     display: flex;
+    flex-direction: column;
+
+    background-image: url("../img/fundo.webp");
+    background-size: cover;
+    background-position: 30% 25%;
+    background-repeat: no-repeat;
+
+    padding: 20px;
+}
+
+main {
+    flex: 1;
 }
 
 /* SIDEBAR SOCIAL */
@@ -54,7 +73,7 @@ body {
 .social-sidebar {
     position: fixed;
 
-    right: 5px;
+    right: 10px;
     top: 50%;
 
     transform: translateY(-50%);
@@ -115,7 +134,16 @@ img {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding-inline: clamp(16px, 4vw, 32px);
+
+    padding: 20px clamp(16px, 4vw, 32px);
+
+    border-radius: 20px;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(6px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .sr-only {
@@ -173,19 +201,20 @@ button:focus-visible {
 
 .nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 
-    padding: var(--space-4) var(--space-6);
+    align-items: center;
 
     gap: var(--space-4);
 
-    flex-wrap: wrap;
+
+    padding-bottom: 30px;
 }
 
 .logo img {
-    height: 40px;
+    height: 200px;
     max-width: 100%;
+    transition: transform .3s ease;
 }
 
 .logo img:hover {
@@ -194,11 +223,13 @@ button:focus-visible {
 
 .nav-links {
     display: flex;
+
     gap: var(--space-3);
+
     align-items: center;
+    justify-content: center;
 
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .nav-links a {
@@ -358,7 +389,7 @@ button:focus-visible {
 }
 
 .card {
-    background: var(--card);
+    background: var(--secondary);
 
     border: var(--space-1) solid var(--border);
 
@@ -373,7 +404,7 @@ button:focus-visible {
 
 .card i {
     font-size: var(--space-5);
-    color: var(--secondary);
+    color: var(--card);
     margin-bottom: var(--space-3);
 }
 
@@ -502,6 +533,7 @@ button:focus-visible {
     color: var(--primary);
 }
 
+
 /* =========================================
    INFO.HTML
 ========================================= */
@@ -514,15 +546,18 @@ button:focus-visible {
 
 .quote-box-info {
     display: flex;
-    align-items: flex-start;
-    gap: var(--space-7);
+    flex-direction: column;
+    align-items: center;
+
+    gap: var(--space-6);
+
+    text-align: justify;
 }
 
 .info-image {
-    flex: 0 0 clamp(180px, 25vw, 260px);
+    width: 100%;
 
-    border-radius: var(--space-4);
-
+    border-radius: 20px;
     border: var(--space-1) solid var(--border);
 
     overflow: hidden;
@@ -530,18 +565,22 @@ button:focus-visible {
 
 .info-image img {
     width: 100%;
+    height: 450px;
 
     object-fit: cover;
+    object-position: center 35%;
+
+    display: block;
 
     transition: transform .5s ease;
 }
 
 .info-image:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .quote-text-info {
-    flex: 1;
+    width: 100%;
 }
 
 .quote-text-info p {
@@ -638,7 +677,12 @@ button:focus-visible {
 ========================================= */
 
 .footer {
-    padding-block: var(--space-4);
+    padding: 20px;
+    text-align: center;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    backdrop-filter: blur(4px);
 }
 
 .footer-content {
@@ -666,7 +710,7 @@ button:focus-visible {
 }
 
 .coffee-icon {
-    color: var(--primary);
+    color: var(--card);
 
     margin-inline: var(--space-3);
 }
@@ -734,10 +778,6 @@ button:focus-visible {
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
-
-    .info-image {
-        width: 180px;
     }
 
     .social-sidebar {
