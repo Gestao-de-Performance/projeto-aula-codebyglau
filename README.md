@@ -1,6 +1,6 @@
-# Projetos Front-end
+# Projetos acadêmicos
 
-Repositório criado para estudos de desenvolvimento web e construção de interfaces responsivas.
+Repositório criado para estudos de desenvolvimento web e construção de interfaces responsivas durante a Escola de Programadores da UNÍNTESE.
 
 ## Projetos
 
